@@ -23,7 +23,10 @@ DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['list-staging.johannpeterson.com']
+ALLOWED_HOSTS = [
+    'list-staging.johannpeterson.com',
+    'localhost',
+]
 
 # Application definition
 
