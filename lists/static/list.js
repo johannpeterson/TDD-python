@@ -1,6 +1,14 @@
 jQuery(document).ready(function($) {
-    $('input').on('keypress', function() {
-            $('.has-error').hide();
+    jQuery("*").on('keypress', ':input', function() {
+            jQuery('.has-error').hide();
+            console.log('keypress!');
         }
-    )
+    );
+
+    jQuery("*").on('click', ':input', function() {
+            jQuery('.has-error').hide();
+            console.log('click!');
+        }
+    );
+
 })

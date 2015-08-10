@@ -9,8 +9,8 @@
 <body>
     <div id="qunit"></div>
     <div id="qunit-fixture">
-        <form>
-            <input name="text" />
+        <form id="input-form">
+            <input name="text" id="id_input_item" />
             <div class="has-error">Error text</div>
         </form>
     </div>
@@ -20,18 +20,33 @@
     <script>
 /*global $, test, equal */
 
-test(
+QUnit.module("First Module");
+
+QUnit.test(
         "errors should be hidden on keypress",
         function() {
-            $('input').trigger('keypress');
-            equal($('.has-error').is(':visible'), false)
+            console.log("running keypress test");
+            QUnit.assert.equal($('.has-error').is(':visible'), true);
+            jQuery("#id_input_item").trigger('keypress');
+            QUnit.assert.equal($('.has-error').is(':visible'), false);
         }
-)
+);
 
-test(
+QUnit.test(
         "errors should not be hidden unless there is a keypress",
         function() {
-            equal($('.has-error').is(':visible'), true);
+            console.log("running unless keypress test");
+            QUnit.assert.equal($('.has-error').is(':visible'), true);
+        }
+);
+
+QUnit.test(
+        "errors should be hidden on click",
+        function() {
+            console.log("running click test");
+            QUnit.assert.equal($('.has-error').is(':visible'), true);
+            jQuery("input[name='text']").trigger('click');
+            QUnit.assert.equal(jQuery('.has-error').is(':visible'), false);
         }
 );
 
