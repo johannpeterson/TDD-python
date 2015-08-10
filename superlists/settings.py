@@ -19,14 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'u=g7o#)ebluhv^32m4dy4&jn7*korguv#)t_2n(w8qw9tzuka0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = [
-    'list-staging.johannpeterson.com',
-    'localhost',
-]
+ALLOWED_HOSTS = []
 
 # Application definition
 
